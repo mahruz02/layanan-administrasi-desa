@@ -4,6 +4,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\WargaController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KtpController;
+use App\Http\Controllers\KkController;
+use App\Http\Controllers\SkuController;
 use App\Models\Warga;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
@@ -40,4 +43,18 @@ Route::controller(AdminController::class)->group(function(){
 });
 Route::controller(DashboardController::class)->group(function(){
     Route::get('/admin/index', 'dashboard')->name('admin.index');
+});
+Route::controller(KtpController::class)->group(function(){
+    Route::get('/warga/ktp', 'pengajuanktp')->name('warga.ktp');
+    Route::post('/warga/ktp/post', 'store')->name('warga.ktp_post');
+});
+
+Route::controller(KkController::class)->group(function(){
+    Route::get('/warga/kk', 'pengajuankk')->name('warga.kk');
+    Route::post('/warga/kk/post', 'store')->name('warga.kk_post');
+});
+
+Route::controller(SkuController::class)->group(function(){
+    Route::get('/warga/sku', 'pengajuansku')->name('warga.sku');
+    Route::post('/warga/sku/post', 'store')->name('warga.sku_post');
 });
