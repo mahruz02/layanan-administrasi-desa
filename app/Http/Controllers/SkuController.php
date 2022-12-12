@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sku;
 use App\Models\Warga;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 class SkuController extends Controller
 {
@@ -37,6 +38,31 @@ class SkuController extends Controller
         $data->dokumen = $filename;
         $data->status = $status;
         $data->save();
+        return Redirect::route('status.sku');
         // dd($file);
     }
+    public function edit(Request $request){
+        $this->validate($request,[
+            'nama_usaha' => 'required',
+            'alamat_usaha' => 'required',
+            'keperluan' => 'required',
+            
+        ]);
+        $id=$request->id;
+        $data = sku::find($id);
+        $data->nama_usaha = $request->nama_usaha;
+        $data->alamat_usaha = $request->alamat_usaha;
+        $data->keperluan = $request->keperluan;
+        if($request->hasFile('dokumen')){
+            $file = $request->file('dokumen');
+            // nama file
+            $filename = $file->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'dokumen_sku';
+            $file->move($tujuan_upload,$filename);
+            $data->dokumen = $filename;
+        }
+        $data->save();
+        return Redirect::route('status.sku');
+}
 }

@@ -10,8 +10,7 @@
 </head>
 <body>
   <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
-    >
+      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
       <div class="container">
 <img src="{{asset('assets/img/wonosobo.png')}}" class="logo" href="#">Rumahrafif.</img>
         <button

@@ -1,3 +1,4 @@
+@include('template/header')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,17 @@
     <title>Pelayanan SKU</title>
 </head>
 <body>
-<form action="{{route('warga.sku_post')}}" method="POST" enctype="multipart/form-data">
+<div class="container-fluid banner-form py-5 d-flex justify-content-center">
+    <div class="card-form">
+      <ul class="nav nav-pills nav-fill mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Layanan SKU</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('status.sku')}}">Cek Status</a>
+        </li>
+  </ul>
+<form action="{{route('warga.sku_post')}}" method="POST" enctype="multipart/form-data" class="card p-4">
     {{csrf_field()}}
     <input type="hidden" name="id_warga" value="{{$data->id}}">
   <div class="mb-3">
@@ -47,5 +58,8 @@
  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div> 
 </body>
 </html>
+@include('template/footer')

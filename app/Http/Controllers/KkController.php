@@ -3,35 +3,72 @@
 namespace App\Http\Controllers;
 use App\Models\kk;
 use Illuminate\Http\Request;
+use App\Models\Warga;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class KkController extends Controller
 {
     public function pengajuankk(){
-        return view('warga.kk');
+        $id = Auth::guard('user')->user()->id;
+        $data = Warga::where('id',$id)->first();
+        return view('warga.kk',['data'=>$data]);
     }
     public function store(Request $request){
         $this->validate($request,[
-            'nik' => 'required|string|max:16',
-            'nama' => 'required|string|max:255',
+            'kepala_keluarga' => 'required',
             'no_kk_lama' => 'required|string|max:16',
-            'alamat' => 'required',
             'status_kawin' => 'required',
             'pendidikan' => 'required',
             'keperluan' => 'required',
-            'dokumen' => 'required',
-            'status' => 'status',
             
         ]);
+        $status = "Pending";
         $data = new Kk;
-        $data->nik = $request->nik;
-        $data->nama = $request->nama;
+        $data->kepala_keluarga = $request->kepala_keluarga;
+        $data->id_warga = $request->id_warga;
         $data->no_kk_lama = $request->no_kk_lama;
-        $data->alamat = $request->alamat;
         $data->status_kawin = $request->status_kawin;
         $data->pendidikan = $request->pendidikan;
         $data->keperluan = $request->keperluan;
-        $data->dokumen = $request->dokumen;
-        $data->status = $request->status;
+        $file = $request->file('dokumen');
+        // nama file
+        $filename = $file->getClientOriginalName();
+        // isi dengan nama folder tempat kemana file diupload
+        $tujuan_upload = 'dokumen_kk';
+        $file->move($tujuan_upload,$filename);
+        $data->dokumen = $filename;
+        $data->status = $status;
         $data->save();
+        return Redirect::route('status.kk');
+    }
+    public function edit(Request $request){
+        $this->validate($request,[
+            'kepala_keluarga' => 'required',
+            'no_kk_lama' => 'required|string|max:16',
+            'status_kawin' => 'required',
+            'pendidikan' => 'required',
+            'keperluan' => 'required',
+            
+        ]);
+        $id=$request->id;
+        $data = Kk::find($id);
+        $data->kepala_keluarga = $request->kepala_keluarga;
+        // $data->id_warga = $request->id_warga;
+        $data->no_kk_lama = $request->no_kk_lama;
+        $data->status_kawin = $request->status_kawin;
+        $data->pendidikan = $request->pendidikan;
+        $data->keperluan = $request->keperluan;
+        if($request->hasFile('dokumen')){
+            $file = $request->file('dokumen');
+            // nama file
+            $filename = $file->getClientOriginalName();
+            // isi dengan nama folder tempat kemana file diupload
+            $tujuan_upload = 'dokumen_kk';
+            $file->move($tujuan_upload,$filename);
+            $data->dokumen = $filename;
+        }
+        $data->save();
+        return Redirect::route('status.kk');
     }
 }

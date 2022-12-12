@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
     <title>Document</title>
 </head>
 <body>
+<nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top" >
+      <div class="container">
+<img src="{{asset('assets/img/wonosobo.png')}}" class="logo" href="#">wonosobo</img>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container-fluid banner banner-login">
+    <div class="login position-absolute top-50 start-50 translate-middle mt-1">
+<div class="card login " style="width: 20rem;">
 <form action="{{route('admin.auth_login')}}" method="POST">
     {{csrf_field()}}
   <div class="mb-3">
@@ -23,7 +43,13 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Login</button>
 </form>
+</div>
+</div>
+</div>
+<div class="container-fluid text-center pt-5 pb-5 footer">
+      All Rights Reserved &copy; 2022
+    </div>
 </body>
 </html>
