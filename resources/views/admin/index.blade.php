@@ -1,3 +1,4 @@
+@include('template/sidebar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,99 +10,40 @@
     <title>Beranda</title>
 </head>
 <body>
-  <nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
-    >
-      <div class="container">
-<img src="{{asset('assets/img/wonosobo.png')}}" class="logo" href="#"></img>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="navbarText">
-        <ul class="nav justify-content-start">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="{{route('admin.index')}}">Beranda</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.ktp')}}">Pengajuan KTP</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.kk')}}">Pengajuan KK</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.sku')}}">Pengajuan SKU</a>
-  </li>
-</ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active">Admin</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.logout')}}">Logout</a>
-            </li>
-          </ul>
+    <div class="container-admin container-fluid">
+        <div class="d-flex justify-content-end py-4">
+            <div class="content-admin d-flex flex-column gap-4">
+                <div class="title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div class="isi-admin container-fluid gap-4 d-flex flex-row justify-content-start">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('assets/img/kk.png')}}" class="card-img-top" alt="KK">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('assets/img/ktp.png')}}" class="card-img-top" alt="KTP">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{asset('assets/img/sku.png')}}" class="card-img-top" alt="SKU">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-    <!-- banner -->
-    <div class="container-fluid banner">
-      <div class="container text-center">
-        <h4 class="display-6">
-        Selamat Datang di Website Layanan Administrasi</h4>
-        <h3 class="display-1">Desa Kramatan
-        </h3>
-        <a href="#layanan">
-          <button type="button" class="btn btn-danger btn-lg">
-            Cek Layanan
-          </button>
-        </a>
-      </div>
-    </div>
-    <!-- layanan -->
-    <div class="container-fluid layanan pt-5 pb-5">
-      <div class="container text-center">
-        <h2 class="display-3" id="layanan">Layanan</h2>
-        <p>
-          Untuk memudahkan masyarakat dalam melakukan proses administrasi
-        </p>
-        <div class="row pt-4">
-          <div class="col-md-4">
-            <img src="{{asset('assets/img/ktp.png')}}" alt="" class="dok-img" >
-            <h3 class="mt-3">KTP</h3>
-            <p>
-                Pelayananan KTP
-            </p>
-          </div>
-
-          <div class="col-md-4">
-           <img src="{{asset('assets/img/kk.png')}}" alt="" class="dok-img" >
-            <h3 class="mt-3">KK</h3>
-            <p>
-              Pelayanan KK
-            </p>
-          </div>
-
-          <div class="col-md-4">
-            <img src="{{asset('assets/img/sku.png')}}" alt="" class="dok-img" >
-            <h3 class="mt-3">SKU</h3>
-            <p>
-              Pelayanan SKU
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-    <div class="container-fluid text-center pt-5 pb-5 footer">
-      All Rights Reserved &copy; 2021
-    </div>
+    </div>    
 </body>
 </html>

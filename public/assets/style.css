@@ -102,3 +102,20 @@
 .btn{
   width: max-content !important;
 }
+
+.container-admin{
+  width: 100%;
+  /* margin-left: 260px; */
+}
+.container-admin .content-admin{
+  width: calc(100% - 260px);
+}
+.isi-admin{
+  padding : 0px !important;
+}
+.data-table{
+  z-index: 1 !important;
+}
+.content-admin{
+  z-index: 1 !important;
+}

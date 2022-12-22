@@ -47,10 +47,18 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/login', 'login')->name('admin.login');
     Route::post('/admin/login/post', 'auth')->name('admin.auth_login');
     Route::get('/admin/logout','logout')->name('admin.logout');
-
+    Route::get('/editadmin/warga/{id}', 'EditAdminWarga')->name('admin.edit_warga');
+    Route::get('/editadmin/ktp/{id}', 'EditAdminKtp')->name('admin.edit_ktp');
+    Route::get('/editadmin/kk/{id}', 'EditAdminKk')->name('admin.edit_kk');
+    Route::get('/editadmin/sku/{id}', 'EditAdminSku')->name('admin.edit_sku');
+    Route::get('/editadmin/registerwarga', 'RegisterAdminWarga')->name('admin.register_warga');
 });
 Route::controller(DashboardController::class)->group(function(){
     Route::get('/admin/index', 'dashboard')->name('admin.index');
+    Route::get('/admin/warga', 'AdminWarga')->name('admin.warga');
+    Route::get('/admin/kkadmin', 'AdminKk')->name('admin.kk');
+    Route::get('/admin/ktpadmin', 'AdminKtp')->name('admin.ktp');
+    Route::get('/admin/skuadmin', 'AdminSku')->name('admin.sku');
 });
 Route::controller(KtpController::class)->group(function(){
     Route::get('/warga/ktp', 'pengajuanktp')->name('warga.ktp');

@@ -1,42 +1,51 @@
-<nav
-      class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top"
-    >
-      <div class="container">
-<img src="{{asset('assets/img/wonosobo.png')}}" class="logo" href="#"></img>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="navbarText">
-        <ul class="nav justify-content-start">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="{{route('admin.index')}}">Beranda</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.ktp')}}">Pengajuan KTP</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.kk')}}">Pengajuan KK</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('warga.sku')}}">Pengajuan SKU</a>
-  </li>
-</ul>
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active">Admin</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="{{route('admin.logout')}}">Logout</a>
-            </li>
-          </ul>
+@include('template/sidebar')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}">
+    <title>Admin KTP</title>
+</head>
+<body>
+    <div class="container-admin container-fluid">
+        <div class="d-flex justify-content-end py-4">
+            <div class="content-admin d-flex flex-column gap-4">
+                <div class="title">
+                    <h1>Admin KTP</h1>
+                </div>
+                <table class="table data-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">No</th>
+                      <th scope="col">Nama</th>
+                      <th scope="col">NIK</th>
+                      <th scope="col">Keperluan</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   @foreach($data as $row)
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{$row->nama}}</td>
+                      <td>{{$row->nik}}</td>
+                      <td>{{$row->keperluan}}</td>
+                      <td>{{$row->status}}</td>
+                      <td>
+                      <button type="button" class="btn btn-success">Terima Pengajuan</button> 
+                      <a href="{{route('admin.edit_ktp', ['id'=>$row->id])}}" class="btn btn-primary">Edit Status</a>
+                      <button type="button" class="btn btn-danger">Hapus</button>  
+                      </td>
+                    </tr>
+                  </tbody>
+                  @endforeach
+                </table>
+            </div>
         </div>
-      </div>
-    </nav>
+    </div>
+</body>
+</html>
