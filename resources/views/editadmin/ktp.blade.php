@@ -51,6 +51,7 @@
                 <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
                 <label class="input-group-text" for="inputGroupFile02" >Upload</label>
                 </div>
+                <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Status</label>
                         <select class="form-select" aria-label="Default select example" name="status" value="{{$data->status}}">
                             <option>Open this select menu</option>
@@ -58,6 +59,7 @@
                             <option value="Dokumen Kurang Jelas" {{$data->keperluan == 'Dokumen Kurang Jelas' ? 'selected' : ''}}>Dokumen Kurang Jelas</option>
                             <option value="Data Tidak Sama Dengan Dokumen" {{$data->keperluan == 'Data Tidak Sama Dengan Dokumen' ? 'selected' : ''}}>Data Tidak Sama Dengan Dokumen</option>
                         </select>
+                        </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 </div>

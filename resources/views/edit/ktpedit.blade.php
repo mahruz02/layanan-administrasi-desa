@@ -12,7 +12,7 @@
     <div class="card-form">
       <ul class="nav nav-pills nav-fill mb-3">
         <li class="nav-item">
-          <a class="nav-link " href="{{route('warga.ktp')}}">Layanan KTP</a>
+          <a class="nav-link  text-white" href="{{route('warga.ktp')}}">Layanan KTP</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('status.ktp')}}">Cek Status</a>
@@ -23,7 +23,7 @@
     <input type="hidden" name="id" value="{{$data->id}}">
         <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" value="{{$data->nama}}" readonly>
+            <input type="text" class="form-control readonly" aria-describedby="emailHelp" value="{{$data->nama}}" readonly>
         </div>
         <div class="mb-3">
         <label for="nik" class="form-label">NIK</label>
@@ -39,7 +39,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Keperluan</label>
-            <select class="form-select" aria-label="Default select example" name="{{$data->keperluan}}">
+            <select class="form-select" aria-label="Default select example" name="keperluan">
             <option>Open this select menu</option>
                 <option value="Pengajuan Baru" {{$data->keperluan == 'Pengajuan Baru' ? 'selected' : ''}}>Pengajuan Baru</option>
                 <option value="Pengajuan Pembaharuan" {{$data->keperluan == 'Pengajuan Pembaharuan' ? 'selected' : ''}}>Pengajuan Pembaharuan</option>

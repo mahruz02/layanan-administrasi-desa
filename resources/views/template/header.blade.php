@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/style.css')}}">
+    <style>
+        .navbar a{
+            color: aliceblue;
+        }
+        .navbar a:hover{
+            color: aqua;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" >
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-dark shadow-lg" >
         <div class="container">
             <img src="{{asset('assets/img/wonosobo.png')}}" class="logo" href="#"></img>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

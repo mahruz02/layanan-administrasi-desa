@@ -24,17 +24,20 @@
                       <th scope="col">NIK</th>
                       <th scope="col">Keperluan</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Dokumen</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php $i=1; ?>
                    @foreach($data as $row)
                     <tr>
-                      <th scope="row">1</th>
+                    <td class="text-center">{{$i++}}</td>
                       <td>{{$row->nama}}</td>
                       <td>{{$row->nik}}</td>
                       <td>{{$row->keperluan}}</td>
                       <td>{{$row->status}}</td>
+                      <td><a href="{{route('admin.downloadktp',['file'=>$row->dokumen])}}">{{$row->dokumen}}</a></td>
                       <td>
                         <a href="{{route('admin.printktp',['id'=>$row->id])}}" class="btn btn-success" target="_blank">Print</a> 
                         <a href="{{route('admin.edit_ktp', ['id'=>$row->id])}}" class="btn btn-primary">Edit Status</a>

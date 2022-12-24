@@ -72,11 +72,58 @@ class AdminController extends Controller
     public function RegisterAdminWarga(){
         return view('editadmin.registerwarga');
     }
+    public function registeradminwargastore(Request $request){
+        $message = [
+            'required'=>':attribute tidak boleh kosong!',
+            'size'=>':attribute harus 16 karakter'
+        ];
+        $this->validate($request,[
+            'nik' => 'required|string|size:16',
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'alamat' => 'required',
+            'password' => 'required|string',
+            
+        ],$message);
+        $data = new Warga;
+        $data->nik = $request->nik;
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->alamat = $request->alamat;
+        $data->password = Hash::make($request->password);
+        $data->save();
+        return Redirect::route('admin.warga');
+    }
+    public function post_editadminwarga(Request $request){
+        $message = [
+            'required'=>':attribute tidak boleh kosong!',
+            'size'=>':attribute harus 16 karakter'
+        ];
+        $this->validate($request,[
+            'nik' => 'required|string|size:16',
+            'nama' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'alamat' => 'required'
+            
+        ],$message);
+        $id=$request->id;
+        $data = Warga::find($id);
+        $data->nik = $request->nik;
+        $data->nama = $request->nama;
+        $data->email = $request->email;
+        $data->alamat = $request->alamat;
+        if($request->has('password'))
+        {
+        $data->password = Hash::make($request->password);
+        }
+        $data->save();
+        // dd($id);
+        return Redirect::route('admin.warga');
+    }
     public function post_editadminkk(Request $request){
         $id=$request->id;
         $data = Kk::find($id);
         $data->kepala_keluarga = $request->kepala_keluarga;
-        // $data->id_warga = $request->id_warga;
         $data->no_kk_lama = $request->no_kk_lama;
         $data->status_kawin = $request->status_kawin;
         $data->pendidikan = $request->pendidikan;

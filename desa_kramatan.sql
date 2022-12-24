@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 01:54 PM
+-- Generation Time: Dec 24, 2022 at 09:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -86,10 +86,9 @@ CREATE TABLE `kk` (
 --
 
 INSERT INTO `kk` (`id`, `id_warga`, `kepala_keluarga`, `no_kk_lama`, `status_kawin`, `pendidikan`, `keperluan`, `dokumen`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', 'mahrus', '232323', '2', '2', '1', 'aa.jpg', 'Pending', '2022-12-10 11:42:54', '2022-12-12 05:52:59'),
-(2, '1', 'sdsdsd', '232323', '2', '1', '3', 'aa.jpg', 'Pending', '2022-12-10 11:46:55', '2022-12-10 11:46:55'),
-(3, '1', 'sdsdsd', '232323', '1', '1', '2', 'foto.jpg', 'Pending', '2022-12-10 20:05:49', '2022-12-10 20:05:49'),
-(4, '1', 'ffffff', '232323', '1', '1', '2', 'foto.jpg', 'Pending', '2022-12-10 20:06:19', '2022-12-10 20:06:19');
+(5, '7', 'kuntullll', '897656567565', 'Duda/Janda', 'SMP/Sederajat', 'Cetak Ulang', 'ktp.png', 'Pending', '2022-12-24 02:56:24', '2022-12-24 02:56:45'),
+(6, '1', 'ahmad', '0000000000000000', 'Menikah', 'SD/Sederajat', 'Pengajuan Baru', 'aa.jpg', 'Dokumen Kurang Jelas', '2022-12-24 11:36:22', '2022-12-24 13:03:46'),
+(8, '1', 'lukman', '1111111111111111', 'Menikah', 'SD/Sederajat', 'Pengajuan Pembaharuan', 'doc.pdf', 'Pending', '2022-12-24 12:58:34', '2022-12-24 12:58:34');
 
 -- --------------------------------------------------------
 
@@ -113,7 +112,12 @@ CREATE TABLE `ktp` (
 --
 
 INSERT INTO `ktp` (`id`, `id_warga`, `no_kk`, `keperluan`, `dokumen`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', '233232323', '1', 'foto.jpg', 'Pending', '2022-12-10 11:48:38', '2022-12-10 11:48:38');
+(3, '7', '203942394488', 'Cetak Ulang', 'ktp.png', 'Pending', '2022-12-24 02:48:09', '2022-12-24 02:55:23'),
+(4, '1', '6661111111111111', 'Pengajuan Baru', 'qrcode_41375208_650133e9fd30a81d59b0858b3ecb3d59.png', 'Pending', '2022-12-24 04:40:44', '2022-12-24 13:01:40'),
+(5, '1', '879879879879', 'Pengajuan Pembaharuan', 'foto.jpg', 'Diterima', '2022-12-24 05:34:06', '2022-12-24 12:49:07'),
+(6, '1', '23423423423', 'Pengajuan Pembaharuan', 'foto.jpg', 'Pending', '2022-12-24 05:34:59', '2022-12-24 05:34:59'),
+(7, '12', '090909090909090', 'Pengajuan Baru', 'aa.jpg', 'Pending', '2022-12-24 09:30:35', '2022-12-24 09:32:07'),
+(8, '1', '1111111111111110', 'Pengajuan Pembaharuan', 'aa.jpg', 'Pending', '2022-12-24 12:57:08', '2022-12-24 12:57:39');
 
 -- --------------------------------------------------------
 
@@ -195,10 +199,10 @@ CREATE TABLE `sku` (
 --
 
 INSERT INTO `sku` (`id`, `id_warga`, `keperluan`, `nama_usaha`, `alamat_usaha`, `dokumen`, `status`, `created_at`, `updated_at`) VALUES
-(1, '1', '2', 'rertyufiop4e5rcyvbul', 'xjkwzexctbuhjik', 'WhatsApp Image 2022-12-03 at 21.23.12.jpg', 'Pending', '2022-12-10 03:42:08', '2022-12-12 02:16:59'),
-(2, '1', '2', 'jkjkhjkhkj', 'jhkkjhj', NULL, 'Pending', '2022-12-10 03:47:12', '2022-12-10 03:47:12'),
-(3, '1', '1', 'xcv', 'cvbcv', 'kk.jpg', 'Pending', '2022-12-10 03:50:37', '2022-12-10 03:50:37'),
-(4, '1', 'Open this select menu', 'rertyufiop', 'etewf', 'kk.jpg', 'Pending', '2022-12-10 10:38:44', '2022-12-10 10:38:44');
+(1, '1', 'Pengajuan Pembaharuan', 'makan enak', 'wonobungkah', 'foto.jpg', 'Dokumen Kurang Jelas', '2022-12-10 03:42:08', '2022-12-24 13:04:42'),
+(5, '1', 'Pengajuan Baru', 'kang jaja', 'sdsd', 'pngwing.com.png', 'Pending', '2022-12-24 02:13:44', '2022-12-24 02:13:44'),
+(6, '7', 'Pengajuan Pembaharuan', 'Massaq', 'Wonosoboq', 'ktp.png', 'Pending', '2022-12-24 02:57:17', '2022-12-24 02:58:29'),
+(11, '1', 'Pengajuan Baru', 'kentang enak banget', 'Wonosobo', '391-559-SKL wisduawan ke 44.pdf', 'Pending', '2022-12-24 12:59:25', '2022-12-24 13:01:14');
 
 -- --------------------------------------------------------
 
@@ -239,7 +243,10 @@ CREATE TABLE `warga` (
 --
 
 INSERT INTO `warga` (`id`, `nama`, `nik`, `alamat`, `email`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'sdsd', '121212121', 'asd', '123@gmail.com', '$2y$10$qdgCAVYeIjdcsgtRqN.cpORHpV88U/TXp7WhwaU9qq.SRy1wCie.u', '2022-12-09 02:22:41', '2022-12-09 02:22:41');
+(1, 'mahrus', '0000000000000000', 'kramatan, wonosobo', '123@gmail.com', '$2y$10$.dGXNxwriNT/6Lr0k5jWtOjXXmNykTp3kKHJwgLq2T2qhL/b76Z6y', '2022-12-09 02:22:41', '2022-12-24 12:42:04'),
+(10, 'wapek', '1111111111111111', 'kresek  sinduagung rt 04 rw 01 selomerto wonosobo', 'e@e', '$2y$10$Wm1daNaOa5FwcBfXtiFA.ewarh42z7X9dart.z3kT5B.S4yh8hXMe', '2022-12-24 08:43:21', '2022-12-24 08:43:21'),
+(11, 'rifai', '0000000000000000', 'kresek  sinduagung rt 04 rw 01 selomerto wonosobo', 'mahrus@gmail.com', '$2y$10$EiPmyIMuPyQt1Vx/GUc/K.jTs81/JrN.ZvnXDecQRjmabdOJbpaJK', '2022-12-24 08:56:58', '2022-12-24 08:56:58'),
+(14, 'ibnu', '0000000000000000', 'kresek  sinduagung rt 04 rw 01 selomerto wonosobo', 'ibnu@gmail.com', '$2y$10$fmLDNon0ZBB3.FEzACn.iOld6BggSZjsWNkQUTbXM99WIeQFqThp6', '2022-12-24 13:02:46', '2022-12-24 13:02:46');
 
 --
 -- Indexes for dumped tables
@@ -329,13 +336,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `kk`
 --
 ALTER TABLE `kk`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `ktp`
 --
 ALTER TABLE `ktp`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -353,7 +360,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `sku`
 --
 ALTER TABLE `sku`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -365,7 +372,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `warga`
 --
 ALTER TABLE `warga`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

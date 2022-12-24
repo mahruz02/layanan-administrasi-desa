@@ -68,7 +68,7 @@
             </tr>
         </table>
         <p>
-            Sesuai dengan nama bersangkutan diatas, surat keterangan pengantar ini dibuat untuk keperluan {{$data->keperluan}} KTP.
+            Sesuai dengan nama bersangkutan diatas, surat keterangan pengantar ini dibuat untuk keperluan {{$data->keperluan}} kartu tanda penduduk (KTP).
         </p>
         <p>
            Demikian surat pengantar kami buat untuk dapat dipergunakan seperlunya.

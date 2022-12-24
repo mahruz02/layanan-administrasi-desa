@@ -15,7 +15,7 @@
           <a class="nav-link active" aria-current="page" href="#">Layanan KK</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('status.kk')}}">Cek Status</a>
+          <a class="nav-link text-white" href="{{route('status.kk')}}">Cek Status</a>
         </li>
       </ul>
       <form action="{{route('warga.kk_post')}}" method="POST" enctype="multipart/form-data" class="card p-4">
@@ -23,7 +23,10 @@
         <input type="hidden" name="id_warga" value="{{$data->id}}">
         <div class="mb-3">
           <label for="nama" class="form-label">Nama Kepala Keluarga</label>
-          <input type="text" class="form-control" aria-describedby="emailHelp" name="kepala_keluarga" placeholder="Masukan Nama Kepala Keluarga">
+          <input type="text" class="form-control @error('kepala_keluarga') is-invalid @enderror" aria-describedby="emailHelp" name="kepala_keluarga" placeholder="Masukan Nama Kepala Keluarga">
+          @error('kepala_keluarga')
+          <small class="text-danger fw-bold">{{$message}}</small>
+          @enderror
         </div>
         <div class="mb-3">
           <label for="nik" class="form-label">NIK</label>
@@ -31,7 +34,10 @@
         </div> 
         <div class="mb-3">
           <label for="nik" class="form-label">No KK Lama</label>
-          <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk_lama" placeholder="Masukan Nomer KK Lama">
+          <input type="number" class="form-control @error('no_kk_lama') is-invalid @enderror"  aria-describedby="emailHelp" name="no_kk_lama" placeholder="Masukan Nomer KK Lama">
+          @error('no_kk_lama')
+          <small class="text-danger fw-bold">{{$message}}</small>
+          @enderror
         </div>
         <div class="mb-3">
           <label for="alamat" class="form-label">Alamat</label>
@@ -62,6 +68,9 @@
           <input type="file" class="form-control" id="inputGroupFile02" name="dokumen">
           <label class="input-group-text" for="inputGroupFile02">Upload</label>
         </div>
+        @error('dokumen')
+         <small class="text-danger fw-bold">{{$message}}</small> <br>
+        @enderror
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Keperluan</label>
           <select class="form-select" aria-label="Default select example" name="keperluan">

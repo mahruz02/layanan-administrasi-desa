@@ -1,7 +1,6 @@
 .main-bg {
   background-color: #333;
 }
-
 .banner {
     background: url("./img/home-bg.jpg")
       no-repeat center center;
@@ -12,6 +11,10 @@
   }
 .banner-size{
   padding-top: 20%;
+  padding-bottom: 20%;
+}
+.banner2{
+  padding-top: 5%;
   padding-bottom: 20%;
 }
   

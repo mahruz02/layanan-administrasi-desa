@@ -16,7 +16,7 @@
           <a class="nav-link active" aria-current="page" href="#">Layanan SKU</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('status.sku')}}">Cek Status</a>
+          <a class="nav-link text-white" href="{{route('status.sku')}}">Cek Status</a>
         </li>
   </ul>
 <form action="{{route('warga.sku_post')}}" method="POST" enctype="multipart/form-data" class="card p-4">
@@ -41,18 +41,28 @@
   </div>
   <div class="mb-3">
     <label for="nama_usaha" class="form-label">Nama Usaha</label>
-    <input type="textarea" class="form-control" aria-describedby="emailHelp" name="nama_usaha" placeholder="Masukan Nama Usaha">
+    <input type="textarea" class="form-control @error('nama_usaha') is-invalid @enderror" aria-describedby="emailHelp" name="nama_usaha" placeholder="Masukan Nama Usaha">
+    @error('nama_usaha')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="alamat_usaha" class="form-label">Alamat Usaha</label>
-    <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat_usaha" placeholder="Masukan Alamat Lengkap Usaha">
+    <input type="textarea" class="form-control @error('nama_usaha') is-invalid @enderror" aria-describedby="emailHelp" name="alamat_usaha" placeholder="Masukan Alamat Lengkap Usaha">
+    @error('alamat_usaha')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
+  
   <label for="exampleInputPassword1" class="form-label">Upload Dokumen</label>
   <div class="input-group mb-3">
   <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
   <label class="input-group-text" for="inputGroupFile02" >Upload</label>
 </div>
- 
+@error('dokumen')
+      <small class="text-danger fw-bold">{{$message}}</small><br>
+    @enderror
+    
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

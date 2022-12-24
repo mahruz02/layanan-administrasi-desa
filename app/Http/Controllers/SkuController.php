@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Sku;
 use App\Models\Warga;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 class SkuController extends Controller
 {
@@ -15,12 +16,17 @@ class SkuController extends Controller
         return view('warga.sku',['data'=>$data]);
     }
     public function store(Request $request){
+        $message = [
+            'required'=>':attribute wajib diisi!',
+            'size'=>':attribute harus 16 karakter'
+        ];
         $this->validate($request,[
             'nama_usaha' => 'required',
             'alamat_usaha' => 'required',
             'keperluan' => 'required',
+            'dokumen' => 'required',
             
-        ]);
+        ], $message);
         $status = "Pending";
         $data = new Sku;
         $data->id_warga = $request->id_warga;
@@ -38,17 +44,11 @@ class SkuController extends Controller
         $data->dokumen = $filename;
         $data->status = $status;
         $data->save();
+        Session::flash('success','Data Berhasil Ditambahkan');
         return Redirect::route('status.sku');
         // dd($file);
     }
     public function edit(Request $request){
-        $this->validate($request,[
-            'nama_usaha' => 'required',
-            'alamat_usaha' => 'required',
-            'keperluan' => 'required',
-            'dokumen' => 'required',
-            
-        ]);
         $id=$request->id;
         $data = sku::find($id);
         $data->nama_usaha = $request->nama_usaha;

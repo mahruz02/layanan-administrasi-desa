@@ -18,16 +18,23 @@
                 </div>
                     <div class="login position-absolute top-50 start-50 translate-middle mt-1">
                     <div class="card register " style="width: 40rem;">
-                    <form action="{{route('warga.store')}}" method="POST">
+                    <form action="{{route('admin.post_editadminwarga')}}" method="POST">
                         {{csrf_field()}}
+                        <input type="hidden" value="{{$data->id}}" name="id">
                         <h2 class="text-center">Edit Data Warga</h2><br>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" value="{{$data->nama}}" placeholder="Masukan Nama Lengkap">
+                        <input type="text" class="form-control @error('nama') is-invalid @enderror" aria-describedby="emailHelp" name="nama" value="{{$data->nama}}" placeholder="Masukan Nama Lengkap">
+                        @error('nama')
+                        <small class="text-danger fw-bold">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="nik" class="form-label">NIK</label>
-                        <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" value="{{$data->nik}}" placeholder="Masukan NIK">
+                        <input type="number" class="form-control @error('nik') is-invalid @enderror"  aria-describedby="emailHelp" name="nik" value="{{$data->nik}}" placeholder="Masukan NIK">
+                        @error('nik')
+                        <small class="text-danger fw-bold">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
@@ -39,7 +46,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
+                        <input type="password" class="form-control  @error('password') is-invalid @enderror" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
+                        @error('password')
+                        <small class="text-danger fw-bold">{{$message}}</small>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -47,11 +47,17 @@
     <h2 class="text-center">Login</h2><br>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Email">
+    <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Email">
+    @error('email')
+        <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
+    <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
+    @error('password')
+        <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="login-btn">
   <button type="submit" class="btn btn-primary">Login</button>

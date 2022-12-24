@@ -69,6 +69,8 @@
                             <option value="Pengajuan Pembaharuan" {{$data->keperluan == 'Pengajuan Pembaharuan' ? 'selected' : ''}}>Pengajuan Pembaharuan</option>
                             <option value="Cetak Ulang" {{$data->keperluan == 'Cetak Ulang' ? 'selected' : ''}}>Cetak Ulang</option>
                         </select>
+                        </div>
+                        <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Status</label>
                         <select class="form-select" aria-label="Default select example" name="status" value="{{$data->status}}">
                             <option>Open this select menu</option>

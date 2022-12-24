@@ -52,6 +52,7 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/editadmin/kk/{id}', 'EditAdminKk')->name('admin.edit_kk');
     Route::get('/editadmin/sku/{id}', 'EditAdminSku')->name('admin.edit_sku');
     Route::get('/editadmin/registerwarga', 'RegisterAdminWarga')->name('admin.register_warga');
+    Route::post('/editadmin/registerwarga', 'registeradminwargastore')->name('admin.registerstore');
     Route::post('editadmin/kk/post','post_editadminkk')->name('admin.post_editadminkk');
     Route::post('editadmin/ktp/post','post_editadminktp')->name('admin.post_editadminktp');
     Route::post('editadmin/sku/post','post_editadminsku')->name('admin.post_editadminsku');
@@ -70,6 +71,9 @@ Route::controller(DashboardController::class)->group(function(){
     Route::get('/admin/kkadmin', 'AdminKk')->name('admin.kk');
     Route::get('/admin/ktpadmin', 'AdminKtp')->name('admin.ktp');
     Route::get('/admin/skuadmin', 'AdminSku')->name('admin.sku');
+    Route::get('admin/ktpadmin/download/{file}','downloadktp')->name('admin.downloadktp');
+    Route::get('admin/kkadmin/download/{file}','downloadkk')->name('admin.downloadkk');
+    Route::get('admin/skuadmin/download/{file}','downloadsku')->name('admin.downloadsku');
 });
 Route::controller(KtpController::class)->group(function(){
     Route::get('/warga/ktp', 'pengajuanktp')->name('warga.ktp');

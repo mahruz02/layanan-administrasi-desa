@@ -7,6 +7,7 @@ use App\Models\Ktp;
 use App\Models\Warga;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 class KtpController extends Controller
 {
     public function pengajuanktp(){
@@ -15,12 +16,16 @@ class KtpController extends Controller
         return view('warga.ktp',['data'=>$data]);
     }
     public function store(Request $request){
-            $this->validate($request,[
-            'no_kk' => 'required',
+        $message = [
+            'required'=>':attribute wajib diisi!',
+            'size'=>':attribute harus 16 karakter'
+        ];
+        $this->validate($request, [
+            'no_kk' => 'required|string|size:16',
             'keperluan' => 'required',
-            'dokumen' => 'required',
-                    
-        ]);
+            'dokumen' => 'required'
+            
+        ], $message);
         $status = "Pending";
         $data = new ktp;
         $data->id_warga = $request->id_warga;
@@ -33,11 +38,12 @@ class KtpController extends Controller
         $data->dokumen = $filename;
         $data->status = $status;
         $data->save();
+        Session::flash('success','Data Berhasil Ditambahkan');
         return Redirect::route('status.ktp');
     }
     public function edit(Request $request){
         $this->validate($request,[
-        'no_kk' => 'required',
+        'no_kk' => 'required|string|size:16',
         'keperluan' => 'required',
                 
     ]);

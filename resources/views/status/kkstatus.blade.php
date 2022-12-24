@@ -8,11 +8,14 @@
     <title>Pelayanan KK</title>
 </head>
 <body>
-  <div class="container-fluid banner-form py-5 d-flex justify-content-center">
+<div class="container-fluid banner-form py-5 d-flex flex-column align-items-center">
+  @if(Session::has('success'))
+      <div class="alert alert-success">Data Berhasil Ditambahkan</div>
+    @endif
   <div class="card-form">
       <ul class="nav nav-pills nav-fill mb-3">
         <li class="nav-item">
-          <a class="nav-link" href="{{route('warga.kk')}}">Layanan KK</a>
+          <a class="nav-link text-white" href="{{route('warga.kk')}}">Layanan KK</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('status.kk')}}">Cek Status</a>

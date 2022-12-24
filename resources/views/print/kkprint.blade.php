@@ -74,7 +74,7 @@
             </tr>
         </table>
         <p>
-            Sesuai dengan nama bersangkutan diatas, surat keterangan pengantar ini dibuat untuk keperluan {{$data->keperluan}} KTP.
+            Sesuai dengan nama bersangkutan diatas, surat keterangan pengantar ini dibuat untuk keperluan {{$data->keperluan}} Kartu Keluarga (KK).
         </p>
         <p>
            Demikian surat pengantar kami buat untuk dapat dipergunakan seperlunya.

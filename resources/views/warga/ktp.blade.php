@@ -16,7 +16,7 @@
           <a class="nav-link active" aria-current="page" href="#">Layanan KTP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('status.ktp')}}">Cek Status</a>
+          <a class="nav-link text-white" href="{{route('status.ktp')}}">Cek Status</a>
         </li>
       </ul>
 <form action="{{route('warga.ktp_post')}}" method="POST" enctype="multipart/form-data" class="card p-4">
@@ -32,7 +32,10 @@
   </div>
   <div class="mb-3">
     <label for="nik" class="form-label">No KK</label>
-    <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk" placeholder="Masukan No KK">
+    <input type="number" class="form-control @error('no_kk') is-invalid @enderror"  aria-describedby="emailHelp" name="no_kk" placeholder="Masukan No KK">
+    @error('no_kk')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
@@ -40,7 +43,7 @@
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Keperluan</label>
-    <select class="form-select" aria-label="Default select example" name="keperluan">
+    <select class="form-select"  aria-label="Default select example" name="keperluan">
   <option selected>Open this select menu</option>
   <option value="Pengajuan Baru">Pengajuan Baru</option>
   <option value="Pengajuan Pembaharuan">Pengajuan Pembaharuan</option>
@@ -50,8 +53,11 @@
   <label for="exampleInputPassword1" class="form-label">Upload Dokumen</label>
   <div class="input-group mb-3">
   <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
-  <label class="input-group-text" for="inputGroupFile02" >Upload</label>
+<label class="input-group-text" for="inputGroupFile02" >Upload</label>
 </div>
+  @error('dokumen')
+      <small class="text-danger fw-bold">{{$message}}</small> <br>
+    @enderror
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

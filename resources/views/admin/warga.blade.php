@@ -27,9 +27,10 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php $i=1; ?>
                     @foreach($data as $row)
                       <tr>
-                        <th scope="row">1</th>
+                      <td class="text-center">{{$i++}}</th>
                         <td>{{$row->nama}}</td>
                         <td>{{$row->nik}}</td>
                         <td> 

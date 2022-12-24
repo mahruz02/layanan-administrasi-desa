@@ -12,7 +12,7 @@
     <div class="card-form">
       <ul class="nav nav-pills nav-fill mb-3">
         <li class="nav-item">
-          <a class="nav-link " href="{{route('warga.sku')}}">Layanan SKU</a>
+          <a class="nav-link text-white" href="{{route('warga.sku')}}">Layanan SKU</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('status.sku')}}">Cek Status</a>

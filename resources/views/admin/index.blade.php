@@ -10,40 +10,45 @@
     <title>Beranda</title>
 </head>
 <body>
-    <div class="container-admin container-fluid">
+    <div class="container-admin container-fluid banner banner2">
         <div class="d-flex justify-content-end py-4">
-            <div class="content-admin d-flex flex-column gap-4">
-                <div class="title">
-                    <h1>Dashboard</h1>
-                </div>
-                <div class="isi-admin container-fluid gap-4 d-flex flex-row justify-content-start">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('assets/img/kk.png')}}" class="card-img-top" alt="KK">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('assets/img/ktp.png')}}" class="card-img-top" alt="KTP">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{asset('assets/img/sku.png')}}" class="card-img-top" alt="SKU">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="content-admin text-center">
+            <h2 class="display-2">Selamat Datang </h2>
+            <h1>Di Halaman Admin Layanan Desa Kramatan</h1>
+            <br>
+            <br>
+            <br>
+                <div class="container text-center">
+        <p>
+          Untuk memudahkan masyarakat dalam melakukan proses administrasi
+        </p>
+        <div class="row pt-4">
+          <div class="col-md-4">
+            <img src="{{asset('assets/img/ktp.png')}}" alt="" class="dok-img" >
+            <h3 class="mt-3">KTP</h3>
+            <p>
+                Pelayananan KTP
+            </p>
+          </div>
+
+          <div class="col-md-4">
+           <img src="{{asset('assets/img/kk.png')}}" alt="" class="dok-img" >
+            <h3 class="mt-3">KK</h3>
+            <p>
+              Pelayanan KK
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <img src="{{asset('assets/img/sku.png')}}" alt="" class="dok-img" >
+            <h3 class="mt-3">SKU</h3>
+            <p>
+              Pelayanan SKU
+            </p>
+          </div> 
         </div>
-    </div>    
+    </div>
+      
+        </div>
 </body>
 </html>

@@ -5,6 +5,7 @@ use App\Models\kk;
 use Illuminate\Http\Request;
 use App\Models\Warga;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
 class KkController extends Controller
@@ -15,15 +16,19 @@ class KkController extends Controller
         return view('warga.kk',['data'=>$data]);
     }
     public function store(Request $request){
+        $message = [
+            'required'=>':attribute wajib diisi!',
+            'size'=>':attribute harus 16 karakter'
+        ];
         $this->validate($request,[
             'kepala_keluarga' => 'required',
-            'no_kk_lama' => 'required|string|max:16',
+            'no_kk_lama' => 'required|string|size:16',
             'status_kawin' => 'required',
             'pendidikan' => 'required',
             'keperluan' => 'required',
             'dokumen' => 'required',
             
-        ]);
+        ], $message);
         $status = "Pending";
         $data = new Kk;
         $data->kepala_keluarga = $request->kepala_keluarga;
@@ -41,6 +46,7 @@ class KkController extends Controller
         $data->dokumen = $filename;
         $data->status = $status;
         $data->save();
+        Session::flash('success','Data Berhasil Ditambahkan');
         return Redirect::route('status.kk');
     }
     public function edit(Request $request){

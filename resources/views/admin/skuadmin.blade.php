@@ -25,18 +25,21 @@
                       <th scope="col">Nama Usaha</th>
                       <th scope="col">Keperluan</th>
                       <th scope="col">Status</th>
+                      <th scope="col">Dokumen</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php $i=1; ?>
                   @foreach($data as $row)
                     <tr>
-                      <th scope="row">1</th>
+                    <td class="text-center">{{$i++}}</td>
                       <td>{{$row->nama}}</td>
                       <td>{{$row->nik}}</td>
                       <td>{{$row->nama_usaha}}</td>
                       <td>{{$row->keperluan}}</td>
                       <td>{{$row->status}}</td>
+                      <td><a href="{{route('admin.downloadsku',['file'=>$row->dokumen])}}">{{$row->dokumen}}</a></td>
                       <td>
                       <a href="{{route('admin.printsku',['id'=>$row->id])}}" class="btn btn-success" target="_blank">Print</a> 
                       <a href="{{route('admin.edit_sku', ['id'=>$row->id])}}" class="btn btn-primary">Edit Status</a>

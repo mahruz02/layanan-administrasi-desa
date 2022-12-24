@@ -44,31 +44,40 @@
     <h2 class="text-center">Register</h2><br>
   <div class="mb-3">
     <label for="nama" class="form-label">Nama Lengkap</label>
-    <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" placeholder="Masukan Nama Lengkap Anda.">
-    <div id="emailHelp" class="form-text">Masukan Nama Lengkap Anda.</div>
+    <input type="text" class="form-control @error('nama') is-invalid @enderror" aria-describedby="emailHelp" name="nama" placeholder="Masukan Nama Lengkap Anda.">
+    @error('nama')
+        <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="nik" class="form-label">NIK</label>
-    <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" placeholder="Masukan Nomer Induk Kependudukan.">
-    <div id="emailHelp" class="form-text">Masukan Nomer Induk Kependudukan.</div>
+    <input type="number" class="form-control @error('nik') is-invalid @enderror"  aria-describedby="emailHelp" name="nik" placeholder="Masukan Nomer Induk Kependudukan.">
+    @error('nik')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
-    <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat" placeholder="Masukan Alamat Lengkap Anda.">
-    <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Anda.</div>
+    <input type="textarea" class="form-control @error('alamat') is-invalid @enderror" aria-describedby="emailHelp" name="alamat" placeholder="Masukan Alamat Lengkap Anda.">
+    @error('alamat')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Alamat Email Anda.">
-    <div id="emailHelp" class="form-text">Masukan Alamat Email Anda.</div>
+    <input type="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Alamat Email Anda.">
+    @error('email')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+    <input type="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" name="password" placeholder="Password">
+    @error('password')
+      <small class="text-danger fw-bold">{{$message}}</small>
+    @enderror
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
-  <p class="text-center">Sudah punya akun? silahkan <a href="{{route('warga.login')}}">Login</a>
-</form>
 </div>
 </div>
 </div>

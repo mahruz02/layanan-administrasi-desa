@@ -18,7 +18,7 @@
                 </div>
                     <div class="login position-absolute top-50 start-50 translate-middle mt-1">
                     <div class="card register " style="width: 40rem;">
-                    <form action="{{route('warga.store')}}" method="POST">
+                    <form action="{{route('admin.registerstore')}}" method="POST">
                         {{csrf_field()}}
                         <h2 class="text-center">Tambah Data Warga</h2><br>
                     <div class="mb-3">
@@ -28,6 +28,9 @@
                     <div class="mb-3">
                         <label for="nik" class="form-label">NIK</label>
                         <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" placeholder="Masukan NIK">
+                        @error('nik')
+                        <small class="text-danger fw-bold">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>

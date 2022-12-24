@@ -39,4 +39,17 @@ class DashboardController extends Controller
                 ->get();
         return view('admin.skuadmin', ['data'=>$data]);
     }
+    public function downloadktp($file){
+        $file_path = public_path('dokumen_ktp/'.$file);
+        return response()->download($file_path);
+    }
+    public function downloadkk($file){
+        $file_path = public_path('dokumen_kk/'.$file);
+        return response()->download($file_path);
+    }
+    public function downloadsku($file){
+        $file_path = public_path('dokumen_sku/'.$file);
+        return response()->download($file_path);
+    }
+    
 }

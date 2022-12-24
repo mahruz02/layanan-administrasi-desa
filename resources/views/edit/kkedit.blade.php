@@ -12,10 +12,10 @@
     <div class="card-form">
       <ul class="nav nav-pills nav-fill mb-3">
         <li class="nav-item">
-          <a class="nav-link " href="{{route('warga.kk')}}">Layanan KK</a>
+          <a class="nav-link text-white" href="{{route('warga.kk')}}">Layanan KK</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{route('status.kk')}}">Cek Status</a>
+          <a class="nav-link active " aria-current="page" href="{{route('status.kk')}}">Cek Status</a>
         </li>
       </ul>
       <form action="{{route('warga.kk_edit')}}" method="POST" enctype="multipart/form-data" class="card p-4">
