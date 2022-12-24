@@ -46,6 +46,7 @@ class SkuController extends Controller
             'nama_usaha' => 'required',
             'alamat_usaha' => 'required',
             'keperluan' => 'required',
+            'dokumen' => 'required',
             
         ]);
         $id=$request->id;

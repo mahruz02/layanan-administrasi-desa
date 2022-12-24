@@ -23,27 +23,23 @@
                         <h2 class="text-center">Edit Data Warga</h2><br>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" value="{{$data->nama}}">
-                        <div id="emailHelp" class="form-text">Masukan Nama Lengkap Anda.</div>
+                        <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" value="{{$data->nama}}" placeholder="Masukan Nama Lengkap">
                     </div>
                     <div class="mb-3">
                         <label for="nik" class="form-label">NIK</label>
-                        <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" value="{{$data->nik}}">
-                        <div id="emailHelp" class="form-text">Masukan Nomer Induk Kependudukan.</div>
+                        <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" value="{{$data->nik}}" placeholder="Masukan NIK">
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat" value="{{$data->alamat}}">
-                        <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Anda.</div>
+                        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat" value="{{$data->alamat}}" placeholder="Masukan Alamat Lengkap">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{$data->email}}">
-                        <div id="emailHelp" class="form-text">Masukan Alamat Email Anda.</div>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{$data->email}}" placeholder="Masukan Alamat Email">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

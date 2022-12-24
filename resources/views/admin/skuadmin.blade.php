@@ -38,9 +38,9 @@
                       <td>{{$row->keperluan}}</td>
                       <td>{{$row->status}}</td>
                       <td>
-                      <button type="button" class="btn btn-success">Terima Pengajuan</button> 
+                      <a href="{{route('admin.printsku',['id'=>$row->id])}}" class="btn btn-success" target="_blank">Print</a> 
                       <a href="{{route('admin.edit_sku', ['id'=>$row->id])}}" class="btn btn-primary">Edit Status</a>
-                      <button type="button" class="btn btn-danger">Hapus</button>  
+                      <a href="{{route('admin.deletesku',['id'=>$row->id])}}" class="btn btn-danger">Hapus</a>
                       </td>
                     </tr>
                     @endforeach

@@ -21,6 +21,7 @@ class KkController extends Controller
             'status_kawin' => 'required',
             'pendidikan' => 'required',
             'keperluan' => 'required',
+            'dokumen' => 'required',
             
         ]);
         $status = "Pending";
@@ -43,14 +44,6 @@ class KkController extends Controller
         return Redirect::route('status.kk');
     }
     public function edit(Request $request){
-        $this->validate($request,[
-            'kepala_keluarga' => 'required',
-            'no_kk_lama' => 'required|string|max:16',
-            'status_kawin' => 'required',
-            'pendidikan' => 'required',
-            'keperluan' => 'required',
-            
-        ]);
         $id=$request->id;
         $data = Kk::find($id);
         $data->kepala_keluarga = $request->kepala_keluarga;

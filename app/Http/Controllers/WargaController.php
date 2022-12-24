@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Warga;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
 class WargaController extends Controller
@@ -30,7 +31,7 @@ class WargaController extends Controller
         $data->alamat = $request->alamat;
         $data->password = Hash::make($request->password);
         $data->save();
-        return Redirect::route('pages.index');
+        return redirect()->back();
     }
     public function Login()
     {
@@ -45,6 +46,7 @@ class WargaController extends Controller
         if(Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password])){
             return Redirect::route('user.index');
         }else{
+            Session::flash('error','Email atau Password Salah');
             return redirect()->back();
         }
 

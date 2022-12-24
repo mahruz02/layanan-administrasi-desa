@@ -24,35 +24,31 @@
         <div class="mb-3">
         <label for="nama" class="form-label">Nama</label>
         <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" value="{{$data->nama}}" readonly>
-        <div id="emailHelp" class="form-text">Masukan Nama Lengkap.</div>
     </div>
     <div class="mb-3">
         <label for="nik" class="form-label">NIK</label>
         <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" value="{{$data->nik}}" readonly>
-        <div id="emailHelp" class="form-text">Masukan Nomer NIK</div>
     </div>
     <div class="mb-3">
         <label for="keperluan" class="form-label">Keperluan</label>
         <select class="form-select" aria-label="Default select example" name="keperluan" value="{{$data->keperluan}}">
     <option selected>Open this select menu</option>
-            <option value="1" {{$data->keperluan == 1 ? 'selected' : ''}}>Pengajuan Baru</option>
-            <option value="2" {{$data->keperluan == 2 ? 'selected' : ''}}>Pengajuan Pembaharuan</option>
-            <option value="3" {{$data->keperluan == 3 ? 'selected' : ''}}>Cetak Ulang</option>
+            <option value="Pengajuan Baru" {{$data->keperluan == 'Pengajuan Baru' ? 'selected' : ''}}>Pengajuan Baru</option>
+            <option value="Pengajuan Pembaharuan" {{$data->keperluan == 'Pengajuan Pembaharuan' ? 'selected' : ''}}>Pengajuan Pembaharuan</option>
+            <option value="Cetak Ulang" {{$data->keperluan == 'Cetak Ulang' ? 'selected' : ''}}>Cetak Ulang</option>
         </select>
     </div>
     <div class="mb-3">
         <label for="nama_usaha" class="form-label">Nama Usaha</label>
-        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="nama_usaha" value="{{$data->nama_usaha}}">
-        <div id="emailHelp" class="form-text">Nama Usaha.</div>
+        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="nama_usaha" value="{{$data->nama_usaha}}" placeholder="Masukan Nama Usaha">
     </div>
     <div class="mb-3">
         <label for="alamat_usaha" class="form-label">Alamat Usaha</label>
-        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat_usaha" value="{{$data->alamat_usaha}}">
-        <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Usaha Anda.</div>
+        <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat_usaha" value="{{$data->alamat_usaha}}" placeholder="Masukan Alamat Lengkap">
     </div>
+    <label for="exampleInputPassword1" class="form-label">Upload File Pendukung</label>
     <div class="input-group mb-3">
     <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
-    <label class="input-group-text" for="inputGroupFile02" >Upload</label>
     </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>

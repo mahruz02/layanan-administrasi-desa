@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/style.css')}}">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
 <nav
@@ -37,40 +37,38 @@
       </div>
     </nav>
     <br>
-<div class="container-fluid banner banner-login">
-<div class="login position-absolute top-50 start-50 translate-middle mt-1">
-<div class="card register " style="width: 40rem;">
+<div class="container-fluid banner banner-login min-vh-100 d-flex flex-column align-items-center justify-content-center">
+<div class="card login w-50">
 <form action="{{route('warga.store')}}" method="POST">
     {{csrf_field()}}
     <h2 class="text-center">Register</h2><br>
   <div class="mb-3">
     <label for="nama" class="form-label">Nama Lengkap</label>
-    <input type="text" class="form-control" aria-describedby="emailHelp" name="nama">
+    <input type="text" class="form-control" aria-describedby="emailHelp" name="nama" placeholder="Masukan Nama Lengkap Anda.">
     <div id="emailHelp" class="form-text">Masukan Nama Lengkap Anda.</div>
   </div>
   <div class="mb-3">
     <label for="nik" class="form-label">NIK</label>
-    <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik">
+    <input type="number" class="form-control"  aria-describedby="emailHelp" name="nik" placeholder="Masukan Nomer Induk Kependudukan.">
     <div id="emailHelp" class="form-text">Masukan Nomer Induk Kependudukan.</div>
   </div>
   <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
-    <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat">
+    <input type="textarea" class="form-control" aria-describedby="emailHelp" name="alamat" placeholder="Masukan Alamat Lengkap Anda.">
     <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Anda.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Alamat Email Anda.">
     <div id="emailHelp" class="form-text">Masukan Alamat Email Anda.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   <p class="text-center">Sudah punya akun? silahkan <a href="{{route('warga.login')}}">Login</a>
 </form>
-</div>
 </div>
 </div>
 </div>

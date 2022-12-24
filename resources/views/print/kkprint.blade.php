@@ -1,84 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="shortcut icon" href="Image/Logo.png" type="image/x-icon">
-	<title>Cetak Laporan</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surat Pengantar KTP</title>
+    <style>
+        .ttd{
+            width : 100%;
+            display: flex;
+            justify-content: end;
+            text-align: center;
+        }
+        .header{
+            width: 100%;
+            text-align: center;
+            line-height: 1.5pt;
+            padding-top: 1.5cm;
+            padding-bottom: 0.5cm;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        hr{
+            border-top: 8px solid black;
+        }
+        .biodata{
+            padding-top: 0.5cm;
+        }
+        .biodata table{
+            padding: 0px 1.25cm ;
+        }
+        @page{
+            size : A4;
+            margin :0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 <body>
-	<center>
-		<table width="100%" border="0">
+    <div class="header">
+        <p>PEMERINTAH DESA</p>
+        <p>DESA KERAMATAN KECAMATAN WONOSOBO</p>
+        <p>Sekretariat : Desa Keramatan, Kecamatan Wonosobo</p>
+    </div>
+    <hr>
+    <div class="biodata">
+        <center>
+            <strong><u>SURAT PENGANTAR KK</u></strong>
+            <br>
+            <p>Nomor : </p>
+        </center>
+        <p>
+            Yang bertandangan tangan dibawah ini Kepala Desa Desa Keramatan Kecamatan Wonosobo, Wonosobo dengan ini menerangkan bahwa :
+        </p>
+        <table>
+            <tr>
+                <td>Nama</td><td>:</td><td>{{$data->nama}}</td>
+            </tr>
+            <tr>
+                <td>NIK</td><td>:</td><td>{{$data->nik}}</td>
+            </tr>
 			<tr>
-				<td width="10%"><img src="Image/Logo.png" width="100" height="120"></td1>
-				<td width="90%">
-					<center>
-						<font size="5">PEMERINTAHAN KABUPATEN PURWAKARTA</font><br>
-						<font size="5">KECAMATAN JATILUHUR</font><br><font size="6"><b>KANTOR DESA CILEGONG</b></font><br>
-						<font size="3"><i>Jl. Ir. H DJuanda No. 161 Cilegong Kecamatan Jatiluhur Kabupaten Purwakarta (41152) Telp./Fax (0331)758005</i></font>
-					</center>
-				</td>
-			</tr>
+                <td>No KK Lama</td><td>:</td><td>{{$data->no_kk_lama}}</td>
+            </tr>
 			<tr>
-				<td colspan="3"><hr></td>
-			</tr>
-		</table>
-		<h2 style="text-align: center;">Laporan Pengajuan Akta Kelahiran</h2>
-		<table border="0" width ="100%">
-			<tr height="30"><font color='black'>
-				<th align='center' colspan="9">
-					<font face='Tahoma' size=2>
-						Dari Tanggal :&nbsp;<font face='Tahoma' size=2><?php echo date('d-m-Y',strtotime($vTanggal1));?></font>&nbsp;&nbsp;&nbsp;
-						Sampai Tanggal :&nbsp;<font face='Tahoma' size=2><?php echo date('d-m-Y',strtotime($vTanggal2)) ;?></font>
-					</font>
-				</th>
-			</tr>
-		</table>
-		<table border="1">
-			<tr><font color='black'>
-				<th>No</th>
-				<th>Tanggal Pengajuan</th>
-				<th>No KK</th>
-				<th>Nama Kepala Keluarga</th>
-				<th>Nama Ibu</th>
-				<th>Nama Bayi</th>
-				<th>Jenis Kelamin</th>
-				<th>Tempat Dilahirkan</th>
-				<th>Tempat Kelahiran</th>
-				<th>Tanggal Lahir</th>
-				<th>Penolong Kelahiran</th>
-				<th>Berat Bayi</th>
-				<th>Panjang Bayi</th>
-			</tr>
-			<tr>
-				<td align="center"></font></td>
-				<td style='text-align: center;'><?php echo $d['tanggal_pengajuan'] ?></td>
-				<td><?php echo $d['no_kk']; ?></td>
-				<td><?php echo $d['nama_kepala_keluarga']; ?></td>
-				<td><?php echo $d['nama_ibu']; ?></td>
-				<td><?php echo $d['nama_bayi']; ?></td>
-				<td><?php echo $d['jenis_kelamin']; ?></td>
-				<td><?php echo $d['tempat_dilahirkan']; ?> </td>
-				<td><?php echo $d['tempat_kelahiran']; ?></td>
-				<td align="center"><?php echo $d['tanggal_lahir']; ?></td>
-				<td><?php echo $d['penolong_kelahiran']; ?></td>
-				<td><?php echo $d['berat_bayi']; ?></td>
-				<td><?php echo $d['panjang_bayi']; ?></td>
-			</tr>
-			<?php
-				$j++;
-			
-			?>
-		</table>
-		<br>
-		<table width="100%">
-			<tr>
-				<td width="80%"><br><br><br><br></td>
-				<td align="center">Purwakarta,&nbsp;<?php echo date('d M Y');?><br>
-				Kepala Desa<br><br><br><br>Bpk Hasanudin Baim Hasan</td>
-			</tr>
-	     </table>
-	</center>
-	<script>
-		window.print();
-	</script>
+                <td>Status Kawin</td><td>:</td><td>{{$data->status_kawin}}</td>
+            </tr>
+            <tr>
+                <td>Alamat</td><td>:</td><td>{{$data->alamat}}</td>
+            </tr>
+            <tr>
+                <td>Keperluan</td><td>:</td><td>{{$data->keperluan}}</td>
+            </tr>
+        </table>
+        <p>
+            Sesuai dengan nama bersangkutan diatas, surat keterangan pengantar ini dibuat untuk keperluan {{$data->keperluan}} KTP.
+        </p>
+        <p>
+           Demikian surat pengantar kami buat untuk dapat dipergunakan seperlunya.
+        </p>
+    </div>
+    <div class="ttd">
+        <div class="ttd-text">
+            <p>Kepala Desa</p>
+            <p>Desa Keramatan</p>
+        </div>
+    </div>
+    <script>
+        window.print();
+    </script>
 </body>
 </html>

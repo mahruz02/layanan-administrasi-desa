@@ -56,7 +56,7 @@
       </div>
     </nav>
     <!-- banner -->
-    <div class="container-fluid banner">
+    <div class="container-fluid banner banner-size">
       <div class="container text-center">
         <h4 class="display-6">Selamat Datang
           @if(Auth::guard('user')->user())

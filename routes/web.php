@@ -52,6 +52,17 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/editadmin/kk/{id}', 'EditAdminKk')->name('admin.edit_kk');
     Route::get('/editadmin/sku/{id}', 'EditAdminSku')->name('admin.edit_sku');
     Route::get('/editadmin/registerwarga', 'RegisterAdminWarga')->name('admin.register_warga');
+    Route::post('editadmin/kk/post','post_editadminkk')->name('admin.post_editadminkk');
+    Route::post('editadmin/ktp/post','post_editadminktp')->name('admin.post_editadminktp');
+    Route::post('editadmin/sku/post','post_editadminsku')->name('admin.post_editadminsku');
+    Route::post('editadmin/warga/post','post_editadminwarga')->name('admin.post_editadminwarga');
+    Route::get('delete/warga/{id}', 'delete_warga')->name('admin.deletewarga');
+    Route::get('delete/kk/{id}', 'delete_kk')->name('admin.deletekk');
+    Route::get('delete/ktp/{id}', 'delete_ktp')->name('admin.deletektp');
+    Route::get('delete/sku/{id}', 'delete_sku')->name('admin.deletesku');
+    Route::get('print/ktp/{id}', 'print_ktp')->name('admin.printktp');
+    Route::get('print/kk/{id}', 'print_kk')->name('admin.printkk');
+    Route::get('print/sku/{id}', 'print_sku')->name('admin.printsku');
 });
 Route::controller(DashboardController::class)->group(function(){
     Route::get('/admin/index', 'dashboard')->name('admin.index');

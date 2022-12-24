@@ -18,6 +18,7 @@ class KtpController extends Controller
             $this->validate($request,[
             'no_kk' => 'required',
             'keperluan' => 'required',
+            'dokumen' => 'required',
                     
         ]);
         $status = "Pending";
@@ -45,8 +46,6 @@ class KtpController extends Controller
     // $data->id_warga = $request->id_warga;
     $data->keperluan = $request->keperluan;
     $data->no_kk = $request->no_kk;
-    $file = $request->file('dokumen');
-    $filename = $file->getClientOriginalName();
     if($request->hasFile('dokumen')){
         $file = $request->file('dokumen');
         // nama file

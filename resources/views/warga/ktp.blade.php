@@ -25,32 +25,29 @@
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
     <input type="text" class="form-control" aria-describedby="emailHelp" value="{{$data->nama}}" readonly>
-    <div id="emailHelp" class="form-text">Masukan Nama Lengkap Anda.</div>
   </div>
   <div class="mb-3">
   <label for="nik" class="form-label">NIK</label>
     <input type="number" class="form-control"  aria-describedby="emailHelp" value="{{$data->nik}}" readonly>
-    <div id="emailHelp" class="form-text">Masukan Nomer NIK</div>
   </div>
   <div class="mb-3">
     <label for="nik" class="form-label">No KK</label>
-    <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk">
-    <div id="emailHelp" class="form-text">Masukan Nomer KK</div>
+    <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk" placeholder="Masukan No KK">
   </div>
   <div class="mb-3">
     <label for="alamat" class="form-label">Alamat</label>
     <input type="textarea" class="form-control" aria-describedby="emailHelp" value="{{$data->alamat}}" readonly>
-    <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Anda.</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Keperluan</label>
     <select class="form-select" aria-label="Default select example" name="keperluan">
   <option selected>Open this select menu</option>
-  <option value="1">Pengajuan Baru</option>
-  <option value="2">Pengajuan Pembaharuan</option>
-  <option value="3">Cetak Ulang</option>
+  <option value="Pengajuan Baru">Pengajuan Baru</option>
+  <option value="Pengajuan Pembaharuan">Pengajuan Pembaharuan</option>
+  <option value="Cetak Ulang">Cetak Ulang</option>
     </select>
   </div>
+  <label for="exampleInputPassword1" class="form-label">Upload Dokumen</label>
   <div class="input-group mb-3">
   <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
   <label class="input-group-text" for="inputGroupFile02" >Upload</label>

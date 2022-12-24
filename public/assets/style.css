@@ -6,10 +6,14 @@
     background: url("./img/home-bg.jpg")
       no-repeat center center;
     background-size: cover;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    /* padding-top: 20%;
+    padding-bottom: 20%; */
     color: #fff;
   }
+.banner-size{
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
   
   .lingkaran {
     display: inline-block;

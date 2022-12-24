@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/style.css')}}">
-    <title>Document</title>
+    <title>Login Admin</title>
 </head>
 <body>
 <nav
@@ -25,27 +25,24 @@
         </button>
       </div>
     </nav>
-    <div class="container-fluid banner banner-login">
-    <div class="login position-absolute top-50 start-50 translate-middle mt-1">
+    <<div class="container-fluid banner banner-login min-vh-100 d-flex flex-column align-items-center justify-content-center">
+@if(Session::has('error'))
+    <div class="alert alert-danger" style="width: 20rem;">Username atau Password Salah</div>
+  @endif
 <div class="card login " style="width: 20rem;">
 <form action="{{route('admin.auth_login')}}" method="POST">
     {{csrf_field()}}
+    <h2 class="text-center">Login</h2><br>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Masukan Email">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Masukan Password">
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
-</div>
 </div>
 </div>
 <div class="container-fluid text-center pt-5 pb-5 footer">

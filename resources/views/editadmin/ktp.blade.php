@@ -16,44 +16,48 @@
                 <div class="title">
                     <h1>Admin KTP</h1>
                 </div>
-                <div class="card-form">
-                <ul class="nav nav-pills nav-fill mb-3">
-                <form action="{{route('warga.ktp_post')}}" method="POST" enctype="multipart/form-data" class="card p-4">
+                <div class="d-flex justify-content-center">
+                <div class="card" style="width: 40rem;">
+                <form action="{{route('admin.post_editadminktp')}}" method="POST" enctype="multipart/form-data" class="card p-4">
                     {{csrf_field()}}
-                    <input type="hidden" name="id_warga" value="{{$data->id}}">
+                    <input type="hidden" name="id" value="{{$data->id}}">
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" aria-describedby="emailHelp" value="{{$data->nama}}" readonly>
-                    <div id="emailHelp" class="form-text">Masukan Nama Lengkap Anda.</div>
                 </div>
                 <div class="mb-3">
                 <label for="nik" class="form-label">NIK</label>
                     <input type="number" class="form-control"  aria-describedby="emailHelp" value="{{$data->nik}}" readonly>
-                    <div id="emailHelp" class="form-text">Masukan Nomer NIK</div>
                 </div>
                 <div class="mb-3">
                     <label for="nik" class="form-label">No KK</label>
-                    <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk">
-                    <div id="emailHelp" class="form-text">Masukan Nomer KK</div>
+                    <input type="number" class="form-control"  aria-describedby="emailHelp" name="no_kk" value="{{$data->no_kk}}" placeholder="Masukan No KK Lama">
                 </div>
                 <div class="mb-3">
                     <label for="alamat" class="form-label">Alamat</label>
                     <input type="textarea" class="form-control" aria-describedby="emailHelp" value="{{$data->alamat}}" readonly>
-                    <div id="emailHelp" class="form-text">Masukan Alamat Lengkap Anda.</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Keperluan</label>
-                    <select class="form-select" aria-label="Default select example" name="keperluan">
-                <option selected>Open this select menu</option>
-                <option value="1">Pengajuan Baru</option>
-                <option value="2">Pengajuan Pembaharuan</option>
-                <option value="3">Cetak Ulang</option>
+                    <select class="form-select" aria-label="Default select example" name="keperluan" value="{{$data->keperluan}}">
+                        <option>Open this select menu</option>
+                        <option value="Pengajuan Baru" {{$data->keperluan == 'Pengajuan Baru' ? 'selected' : ''}}>Pengajuan Baru</option>
+                        <option value="Pengajuan Pembaharuan" {{$data->keperluan == 'Pengajuan Pembaharuan' ? 'selected' : ''}}>Pengajuan Pembaharuan</option>
+                        <option value="Cetak Ulang" {{$data->keperluan == 'Cetak Ulang' ? 'selected' : ''}}>Cetak Ulang</option>
                     </select>
                 </div>
+                <label for="exampleInputPassword1" class="form-label">Upload Dokumen</label>
                 <div class="input-group mb-3">
                 <input type="file" class="form-control" name="dokumen" id="inputGroupFile02">
                 <label class="input-group-text" for="inputGroupFile02" >Upload</label>
                 </div>
+                <label for="exampleInputPassword1" class="form-label">Status</label>
+                        <select class="form-select" aria-label="Default select example" name="status" value="{{$data->status}}">
+                            <option>Open this select menu</option>
+                            <option value="Diterima" {{$data->keperluan == 'Diterima' ? 'selected' : ''}}>Diterima</option>
+                            <option value="Dokumen Kurang Jelas" {{$data->keperluan == 'Dokumen Kurang Jelas' ? 'selected' : ''}}>Dokumen Kurang Jelas</option>
+                            <option value="Data Tidak Sama Dengan Dokumen" {{$data->keperluan == 'Data Tidak Sama Dengan Dokumen' ? 'selected' : ''}}>Data Tidak Sama Dengan Dokumen</option>
+                        </select>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 </div>

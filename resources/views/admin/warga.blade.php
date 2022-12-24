@@ -34,7 +34,7 @@
                         <td>{{$row->nik}}</td>
                         <td> 
                         <a href="{{route('admin.edit_warga',['id'=>$row->id])}}" class="btn btn-primary">Edit</a>
-                        <button type="button" class="btn btn-danger">Hapus</button>  
+                        <a href="{{route('admin.deletewarga',['id'=>$row->id])}}" class="btn btn-danger">Hapus</a>  
                         </td>
                       </tr>
                     @endforeach
