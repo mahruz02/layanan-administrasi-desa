@@ -1,14 +1,15 @@
-Website layanan desa
+guide instalasi
 
-fitur : 1. crud layanan KTP, SKU, KK. 
-        2. multi user (admin and warga)
-        3. print surat pengantar
+install xampp dengan versi php 8 keatas https://www.apachefriends.org/download.html
+install composer https://getcomposer.org/download/
+start xampp
 
-how to install
-1. composer install
-2. cp .env.example .env
-3. setting DB_DATABASE to desa_kramatan on env
-4. php artisan key:generate
+buka project lalu run perintah berikut
+1. composer update
+2. copy env.example to .env
+2. setting name, username, dan pass DB_DATABASE on env
+3. php artisan key:generate
+4. create database
 5. import desa_kramatan.sql to database
 6. run with php artisan serve
 
@@ -19,4 +20,4 @@ pass    : 123
 
 warga login
 email   : 123@gmail.com
-pass    : 123
+pass    : 123
